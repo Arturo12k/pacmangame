@@ -11,10 +11,10 @@ writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],
-    [vector(-180, -160), vector(0, 5)],
-    [vector(100, 160), vector(0, -5)],
-    [vector(100, -160), vector(-5, 0)],
+    [vector(-180, 160), vector(10, 0)],
+    [vector(-180, -160), vector(0, 10)],
+    [vector(100, 160), vector(0, -10)],
+    [vector(100, -160), vector(-10, 0)],
 ]
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -119,41 +119,41 @@ def move():
             point.move(course)
         else:
             options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+                vector(10, 0),
+                vector(-10, 0),
+                vector(0, 10),
+                vector(0, -10),
             ]
            
             dist = pacman - point
-            if (dist.x > 0 and dist.y > 0) and (valid(point + vector(5, 0)) or valid(point + vector(0, 5))):
+            if (dist.x > 0 and dist.y > 0) and (valid(point + vector(10, 0)) or valid(point + vector(0, 10))):
                 options = [
-                    vector(5, 0),
-                    vector(0, 5),
+                    vector(10, 0),
+                    vector(0, 10),
                 ] 
                 plan = choice(options)
                 course.x = plan.x
                 course.y = plan.y
-            elif (dist.x > 0 and dist.y < 0) and (valid(point + vector(5, 0)) or valid(point + vector(0, -5))):
+            elif (dist.x > 0 and dist.y < 0) and (valid(point + vector(10, 0)) or valid(point + vector(0, -10))):
                 options = [
-                    vector(5, 0),
-                    vector(0, -5),
+                    vector(10, 0),
+                    vector(0, -10),
                 ] 
                 plan = choice(options)
                 course.x = plan.x
                 course.y = plan.y
-            elif (dist.x < 0 and dist.y < 0) and (valid(point + vector(-5, 0)) or valid(point + vector(0, -5))):
+            elif (dist.x < 0 and dist.y < 0) and (valid(point + vector(-10, 0)) or valid(point + vector(0, -10))):
                 options = [
-                    vector(-5, 0),
-                    vector(0, -5),
+                    vector(-10, 0),
+                    vector(0, -10),
                 ] 
                 plan = choice(options)
                 course.x = plan.x
                 course.y = plan.y
-            elif (dist.x < 0 and dist.y > 0) and (valid(point + vector(-5, 0)) or valid(point + vector(0, 5))):
+            elif (dist.x < 0 and dist.y > 0) and (valid(point + vector(-10, 0)) or valid(point + vector(0, 10))):
                 options = [
-                    vector(-5, 0),
-                    vector(0, 5),
+                    vector(-10, 0),
+                    vector(0, 10),
                 ] 
                 plan = choice(options)
                 course.x = plan.x
